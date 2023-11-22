@@ -1,0 +1,51 @@
+string query = ($"SELECT  DATA, codprod, SUM(quant) AS quant FROM (SELECT  DATA, codprod, quant FROM log001venda1122 WHERE codprod = '{Produto}'");
+
+                    // for(double i =1; i < 11; i++)
+                    // {
+                    //     if(i < 10)
+                    //     {
+                    //         mes = $"0{i}";
+                    //     }
+                    //     else
+                    //     {
+                    //         mes = i.ToString();
+                    //     }
+                    //     query += $" UNION SELECT  DATA, codprod, SUM(quant) as quant FROM log001venda{mes}18 WHERE codprod = '0000000000002' GROUP BY DATA";
+
+                    //}
+
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda1022 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0922 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0822 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0722 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0622 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0522 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0422 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0322 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0222 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0122 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda1221 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda1121 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda1021 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0921 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0821 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0721 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0621 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0521 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0421 WHERE codprod = '{Produto}'");
+                    query += ($"  UNION ALL SELECT DATA, codprod, quant FROM log001venda0321 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0221 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0121 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda1219 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda1119 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda1019 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0919 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0819 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0719 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0619 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0519 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0419 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0319 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0219 WHERE codprod = '{Produto}'");
+                    query += ($" UNION ALL SELECT DATA, codprod, quant FROM log001venda0119 WHERE codprod = '{Produto}'");
+                    query += ($" ) AS subquery GROUP BY DATA, codprod; ");
